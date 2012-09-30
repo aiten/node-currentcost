@@ -7,7 +7,7 @@
   CurrentCost.prototype = new events.EventEmitter();
   CurrentCost.prototype.begin = function(){
     var that = this;
-    var dataprocess = spawn("python", ["./python/tailserial.py", device]);
+    var dataprocess = spawn("python", [__dirname+"/python/tailserial.py", device]);
     dataprocess.stdout.on('data', function (data) {
       try{
         var tosend = formatData(xml.parse(new String(data), "", false));

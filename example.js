@@ -1,7 +1,7 @@
 CurrentCost = require('./currentcost').CurrentCost;
 sys = require('sys');
 
-var tryit = new CurrentCost('/dev/tty.usbserial');
+var tryit = new CurrentCost('/dev/ttyUSB0');
 
 tryit.on('incremental', function(data){
   console.log('Incremental Update:')
